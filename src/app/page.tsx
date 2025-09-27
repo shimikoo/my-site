@@ -36,12 +36,16 @@ function Nav() {
   );
 }
 
+
 function Hero() {
   return (
     <section className="relative overflow-hidden">
+      {/* 光のグロー */}
       <div className="absolute -top-40 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-fuchsia-600 blur-[120px] opacity-20" />
+
       <div className="mx-auto max-w-6xl px-4 py-24 md:py-32">
         <div className="grid items-center gap-10 md:grid-cols-2">
+          {/* 左カラム */}
           <div>
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
               あなたのビジネスを<br className="hidden md:block" />
@@ -68,17 +72,25 @@ function Hero() {
               </a>
             </div>
           </div>
+
+          {/* 右カラム：画像カード */}
           <div className="relative aspect-[4/3] w-full">
-            <div className="absolute inset-0 rounded-2xl border border-neutral-800 bg-neutral-900/50" />
-            <div className="absolute inset-0 grid place-items-center">
-              <span className="text-neutral-400">Hero 画像や製品モックを配置</span>
-            </div>
+            <div className="absolute inset-0 rounded-2xl border border-neutral-800/80 bg-neutral-900/50" />
+            <Image
+              src="/images/pro-mock.jpg"
+              alt="製品モック"
+              fill
+              className="object-contain p-6 md:p-8"
+              priority
+              sizes="(min-width:1024px) 560px, (min-width:768px) 50vw, 90vw"
+            />
           </div>
         </div>
       </div>
     </section>
   );
 }
+
 
 function Features() {
   const items = [
